@@ -1,0 +1,21 @@
+.search-box {
+  background-color: transparent !important;
+  border: 0;
+  width: 100%;
+  font-size: 1.4rem;
+  color: var(--form-text-color);
+  padding: 0.5em 0.5em 0.2em 0.5em;
+  border-bottom: 3px solid var(--link-hover-color);
+  outline: none;
+  transition: border 300ms linear, background-color 300ms linear;
+}
+
+.search-box:focus {
+  background-color: var(--input-bg-color) !important;
+  border-bottom: 3px solid var(--main-color);
+}
+
+.search-box:hover {
+  border-bottom: 3px solid var(--main-color);
+  background-color: var(--input-bg-color) !important;
+}

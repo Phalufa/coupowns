@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import './variables/colors.scss';
+
+@import './shared/forms';
+@import './shared/links';
+@import './shared/lists';
+@import './shared/panels';
+@import './shared/navs';
+@import './shared/profiles';
+@import './shared/dashboards';
+@import './components/search-box';
+@import './components/snack-bar';
+@import './components/global-site-nav';
+
+$font: 'Montserrat', sans-serif;
+
+* {
+	font-family: $font;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: var(--alter-bg-color);
+}
+
+/* need to remember what is that: */
+// @mixin catbtn {
+//   background: none;
+//   font-size: 1.4rem;
+//   color: var(--form-text-color);
+//   border: none;
+//   outline: none;
+//   border-bottom: 3px solid var(--form-text-color);
+//   height: 100%;
+//   padding: 0.5em 0.5em 0.2em 0.5em;
+//   cursor: pointer;
+//   transition: border 300ms linear, background-color 300ms linear;
+
+//   &:hover {
+//     background-color: var(--input-bg-color);
+//     border-color: var(--main-color);
+//   }
+// }

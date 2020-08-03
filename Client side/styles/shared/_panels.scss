@@ -1,0 +1,39 @@
+.edit-panel {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.btns-wrapper {
+	display: flex;
+	flex: 1;
+}
+
+.btn {
+	flex-wrap: wrap;
+	animation: fadein 1s;
+	flex: 1;
+	background: none;
+	font-size: 1.4rem;
+	color: var(--form-text-color);
+	border: none;
+	outline: none;
+	border-bottom: 3px solid var(--form-text-color);
+	height: 100%;
+	padding: 0.5em 0.5em 0.2em 0.5em;
+	cursor: pointer;
+	transition: border 300ms linear, background-color 300ms linear;
+}
+
+.btn:hover {
+	background-color: var(--input-bg-color);
+	border-color: var(--main-color);
+}
+
+.flex-fill {
+	flex-basis: 2;
+	flex-grow: 2;
+	flex-shrink: 1;
+}

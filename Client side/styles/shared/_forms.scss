@@ -1,0 +1,120 @@
+.form-btn {
+	border: none;
+	outline: none;
+	background-color: var(--main-color);
+	color: var(--form-btn-text-color);
+	padding: 1.2em;
+	font-size: 0.9rem;
+	cursor: pointer;
+	border-radius: 0.2em;
+
+	&:disabled {
+		background-color: var(--form-btn-disabled-color);
+
+		&:hover {
+			background-color: var(--error-color);
+			cursor: default;
+		}
+	}
+
+	&:hover {
+		background-color: var(--form-btn-hover-color);
+	}
+}
+
+.form-input {
+	font-size: 1rem;
+	padding: 0.3em 2em;
+	background-color: var(--input-bg-color);
+	border: none;
+	outline: none;
+	border-radius: 0.6em;
+	color: var(--form-text-color);
+	animation: fadein 1s;
+}
+
+.form-field-title {
+	width: fit-content;
+	border-bottom: 0.2em solid var(--main-color);
+	margin-bottom: 0.6em;
+	animation: fadein 1s;
+}
+
+.form-error-msg {
+	position: relative;
+	margin-top: -0.7em;
+	margin-left: 0.5em;
+	color: var(--error-color);
+	font-weight: bold;
+	padding: 0.5em;
+	border-radius: 0.6em;
+	animation: fadein 1s;
+	z-index: 10;
+}
+
+.update-form-container {
+	height: 105%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: var(--alter-bg-color);
+	z-index: 2;
+	text-align: center;
+
+	h2 {
+		margin: 0;
+		text-align: center;
+	}
+
+	form {
+		position: relative;
+		margin: 0 auto;
+		top: 2em;
+		width: 300px;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	input {
+		position: relative;
+		height: 3em;
+		margin-bottom: 2.5em;
+	}
+}
+
+select {
+	position: relative;
+	height: 3em;
+	margin-bottom: 3em;
+}
+
+.relative {
+	display: flex;
+	position: relative;
+	width: 100%;
+
+	input {
+		width: 100%;
+	}
+}
+
+.show-password {
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	position: absolute;
+	right: 2px;
+	top: 20%;
+	padding: 0;
+	margin: 0;
+	z-index: 2;
+	background: var(--input-bg-color);
+	color: var(--link-hover-color);
+
+	&:hover {
+		color: var(--main-color);
+	}
+}

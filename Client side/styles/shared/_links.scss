@@ -1,0 +1,17 @@
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+.active-link {
+  color: var(--main-color);
+}
+
+.active-dashboard-link {
+  border-bottom: 3px solid var(--main-color);
+  transition: border-width 0.2s ease;
+}
