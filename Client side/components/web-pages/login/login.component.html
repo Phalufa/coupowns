@@ -1,0 +1,28 @@
+<h2>Login</h2>
+
+<form [formGroup]="loginForm">
+
+    <div class="form-field-title">Email:
+        <span *ngIf="getC('email').errors && getC('email').touched" class="form-error-msg">* invalid email
+            address</span>
+    </div>
+    <input class="form-input" type="email" placeholder="donaldtrump@gmail.com" formControlName="email" />
+
+    <div class="form-field-title">Password:
+        <span *ngIf="getC('password').errors && getC('password').touched" class="form-error-msg">* required</span>
+    </div>
+    <input class="form-input" type="password" placeholder="Melania1850*" formControlName="password" />
+
+    <div class="form-field-title">Client:
+        <span *ngIf="getC('client').errors && getC('client').touched" class="form-error-msg">* required</span>
+    </div>
+    <select class="form-input" formControlName="client">
+        <option value="" selected disabled hidden>Who am I?</option>
+        <option *ngFor="let type of clientType | keyvalue" [value]="type.value">
+            {{ type.value | titlecase }}
+        </option>
+    </select>
+
+    <button [disabled]="!loginForm.valid" (click)="login()" class="form-btn">Log in</button>
+
+</form>

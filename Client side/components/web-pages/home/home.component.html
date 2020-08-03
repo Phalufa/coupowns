@@ -1,0 +1,34 @@
+<div class="container">
+    <nav>
+        <ul>
+            <span>View By Category: </span> 
+            <li>
+                <button class="decoration" (click)="viewCategory(null)">All</button>
+            </li>
+            <li *ngFor="let category of categories | keyvalue">
+                <button class="decoration" (click)="viewCategory(category.key)">{{ category.value | titlecase }}</button>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="coupons-content">
+
+        <ul>
+
+            <li *ngFor="let coupon of coupons$ | async let i = index" (click)="viewCouponPage(coupon.id)">
+                <div>
+                    <img [src]="placeholders[i]" alt="coupon image">
+                    <hr>
+                </div>
+
+                <p><b>{{ coupon.title | titlecase }}</b></p>
+                <hr>
+                <p>{{ coupon.category | prettyEnum | titlecase }}</p>
+                <p>{{ coupon.price | currency }}</p>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>

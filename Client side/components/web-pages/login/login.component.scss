@@ -1,0 +1,26 @@
+h2 {
+  margin: 0;
+  text-align: center;
+}
+
+form {
+  position: relative;
+  margin: 0 auto;
+  top: 2em;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+  position: relative;
+  height: 3em;
+  margin-bottom: 2.5em;
+}
+
+select {
+  position: relative;
+  height: 3.5em;
+  margin-bottom: 3.5em;
+}

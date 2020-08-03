@@ -1,0 +1,14 @@
+header {
+	position: fixed;
+	background-color: var(--main-bg-color);
+	z-index: 99;
+	height: 4em;
+	width: 100vw;
+	box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+main {
+	position: relative;
+	height: 90vh;
+	top: 10vh;
+}

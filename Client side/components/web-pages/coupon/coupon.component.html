@@ -1,0 +1,49 @@
+<div class="coupon-container" *ngIf="coupon$ | async as coupon">
+
+  <ul>
+
+    <div class="content">
+
+      <div class="img">
+
+        <!-- coupon image -->
+        <!-- <li><img src="https://i.pravatar.cc/350" alt=""></li> -->
+
+      </div>
+
+      <hr>
+
+      <li><span>{{ coupon.title | titlecase }}</span>
+      </li>
+
+      <li>{{ coupon.description | lowercase }}</li>
+
+      <li><span>Category</span>: {{ coupon.category | prettyEnum | titlecase }}
+      </li>
+
+      <li><span>Company</span>: {{ coupon.company.name | titlecase }}</li>
+
+      <li><span>Starting&nbsp;Date</span>: {{ coupon.startDate | date }}</li>
+
+      <li><span>Expiration&nbsp;Date</span>: {{ coupon.endDate | date }}</li>
+
+      <li><span>Coupons Left</span>: {{ coupon.amount | number }}</li>
+
+      <li><span>Price</span>: <b>{{ coupon.price | currency:"USD" }}</b></li>
+      
+      <li>
+        <button class="form-btn" [disabled]="!isValidForPurchase()" (click)="onPurchase(coupon)">Purchase</button>
+        <button class="back-btn form-btn"(click)="goHome()">Back</button>
+      </li>
+
+      <li>
+        <div class="unbuyable">
+          {{ purchaseable }}
+        </div>
+      </li>
+
+    </div>
+
+  </ul>
+
+</div>
