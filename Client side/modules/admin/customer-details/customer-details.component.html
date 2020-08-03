@@ -1,0 +1,14 @@
+<div class="entity-container" *ngIf="customer">
+
+    <ul class="entity">
+
+        <li class="entity-detail">{{ index + 1 }}.</li>
+        <li class="entity-detail">Name: <cite
+                class="cite">{{ customer.firstName + " " + customer.lastName | titlecase }}</cite>
+        </li>
+        <li class="entity-detail">Email: <cite class="cite">{{ customer.email | lowercase }}</cite></li>
+        <li class="entity-detail">Password: <cite class="cite">{{ customer.password | hidePassword }}</cite></li>
+
+    </ul>
+
+</div>

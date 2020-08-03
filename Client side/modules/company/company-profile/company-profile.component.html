@@ -1,0 +1,18 @@
+<div class="profile-wrapper" *ngIf="companyDetails$ | async as company">
+
+    <h1>{{ company.name | uppercase }}</h1>
+
+    <p>Your company email: <cite>{{ company.email | lowercase }}</cite></p>
+
+    <p>Your company password: <cite>{{ company.password | hidePassword }}</cite></p>
+
+    <div *ngIf="companyNumOfCoupons$ | async as coupons">
+
+        <p>Total company coupons: <cite>{{ coupons.length | number }}</cite></p>
+
+        <p *ngFor="let category of categories | keyvalue">Category <u>{{ category.value | titlecase }}</u> :
+            <cite>{{ filterCoupons(coupons, category.key).length }}</cite></p>
+
+    </div>
+
+</div>

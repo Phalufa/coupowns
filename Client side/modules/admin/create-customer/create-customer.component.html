@@ -1,0 +1,39 @@
+<div class="update-form-container">
+
+    <h2>Add New Customer</h2>
+
+    <form [formGroup]="createForm">
+
+        <div class="form-field-title">First Name:
+            <span *ngIf="getC('firstName').touched && getC('firstName').errors" class="form-error-msg">* invalid
+                name</span>
+        </div>
+        <input class="form-input" type="name" formControlName="firstName" />
+
+        <div class="form-field-title">Last Name:
+            <span *ngIf="getC('lastName').touched && getC('lastName').errors" class="form-error-msg">* invalid
+                name</span>
+        </div>
+        <input class="form-input" type="name" formControlName="lastName" />
+
+        <div class="form-field-title">Email:
+            <span *ngIf="getC('email').errors && getC('email').touched" class="form-error-msg">* invalid email
+                address</span>
+        </div>
+        <input class="form-input" type="email" formControlName="email" />
+
+        <div class="form-field-title">Password:
+            <span *ngIf="getC('password').errors && getC('password').touched" class="form-error-msg">* must be at least
+                4
+                characters long</span>
+        </div>
+        <div class="relative">
+            <input class="form-input" type="password" formControlName="password" #password />
+            <button class="show-password" (click)="showPassword()">{{ reveal }}</button>
+        </div>
+
+        <button [disabled]="!createForm.valid" (click)="create()" class="form-btn">Add</button>
+
+    </form>
+
+</div>

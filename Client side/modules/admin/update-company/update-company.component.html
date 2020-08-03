@@ -1,0 +1,32 @@
+<div class="update-form-container" *ngIf="selectedCompany">
+
+    <h2>{{ title }}</h2>
+
+    <form [formGroup]="updateForm">
+
+        <div class="form-field-title">Name:
+            <span *ngIf="getC('name').invalid && getC('name').errors" class="form-error-msg">* must start with a-Z or
+                0-9</span>
+        </div>
+        <input class="form-input" type="name" formControlName="name" />
+
+        <div class="form-field-title">Email:
+            <span *ngIf="getC('email').errors && getC('email').touched" class="form-error-msg">* invalid email
+                address</span>
+        </div>
+        <input class="form-input" type="email" formControlName="email" />
+
+        <div class="form-field-title">Password:
+            <span *ngIf="getC('password').errors && getC('password').touched" class="form-error-msg">* must be at least
+                4 character long</span>
+        </div>
+        <div class="relative">
+            <input class="form-input" type="password" formControlName="password" #password />
+            <button class="show-password" (click)="showPassword()">{{ reveal }}</button>
+        </div>
+
+        <button [disabled]="!updateForm.valid" (click)="update()" class="form-btn">Update</button>
+
+    </form>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="manage-entity-container">
+    <router-outlet></router-outlet>
+
+    <div class="edit-panel">
+
+        <div class="flex-fill">
+            <input type="text" [(ngModel)]="query" class="search-box" placeholder="Search company">
+        </div>
+
+        <div class="btns-wrapper">
+            <button *ngIf="selectedCompany" [class.btn]="selectedCompany" (click)="edit()">Edit</button>
+            <button *ngIf="selectedCompany" [class.btn]="selectedCompany"
+                (click)="delete(selectedCompany)">Delete</button>
+            <button class="btn" (click)="add()">Create</button>
+        </div>
+    </div>
+
+    <div *ngIf="companies">
+
+        <div *ngFor="let company of companies | search:query; let i = index"
+            [class.selected-entity]="company === selectedCompany">
+            <app-company-details [company]="company" [index]="i" (click)="select(company)"></app-company-details>
+        </div>
+
+    </div>
+
+</div>

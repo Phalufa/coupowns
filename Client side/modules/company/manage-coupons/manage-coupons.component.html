@@ -1,0 +1,27 @@
+<div class="manage-entity-container">
+    <router-outlet></router-outlet>
+
+    <div class="edit-panel">
+
+        <div class="flex-fill">
+            <input type="text" [(ngModel)]="query" class="search-box" placeholder="Search coupons">
+        </div>
+
+        <div class="btns-wrapper">
+            <button *ngIf="selectedCoupon" [class.btn]="selectedCoupon" (click)="edit()">Edit</button>
+            <button *ngIf="selectedCoupon" [class.btn]="selectedCoupon" (click)="delete(selectedCoupon)">Delete</button>
+            <button class="btn" (click)="add()">Create</button>
+        </div>
+    </div>
+
+    <div *ngIf="coupons">
+
+        <div *ngFor="let coupon of coupons| search:query; let i = index"
+            [class.selected-entity]="coupon === selectedCoupon">
+            <app-coupon-details [coupon]="coupon" [index]="i" [showAmount]="true" [showCompany]="false"
+                (click)="select(coupon)"></app-coupon-details>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,25 @@
+<div class="wrap-entity" *ngIf="coupon">
+
+    <ul>
+
+        <div class="entity-content">
+
+            <li>{{ index + 1 }}.</li>
+            <li>Title: <cite class="cite">{{ coupon.title | titlecase }}</cite>
+            </li>
+            <li>Description: <cite class="cite">{{ coupon.description | lowercase }}</cite></li>
+            <li>Category: <cite class="cite">{{ coupon.category | prettyEnum | titlecase }}</cite>
+            </li>
+            <li *ngIf="showCompany">Company: <cite class="cite">{{ coupon.company.name | titlecase }}</cite></li>
+            <li>Start&nbsp;Date: <cite class="cite">{{ coupon.startDate | date }}</cite></li>
+            <li>End&nbsp;Date: <cite class="cite">{{ coupon.endDate | date }}</cite></li>
+            <li *ngIf="showAmount">Amount: <cite class="cite">{{ coupon.amount | number }}</cite></li>
+            <li>Price: <cite class="cite">{{ coupon.price | currency:"USD" }}</cite></li>
+
+        </div>
+
+        <img [src]="placeholder" alt="coupon image">
+        <!-- <img src="{{ coupon.image }}" alt="coupon image"> -->
+    </ul>
+
+</div>

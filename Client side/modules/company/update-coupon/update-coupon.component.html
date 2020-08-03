@@ -1,0 +1,57 @@
+<div class="update-form-container" *ngIf="selectedCoupon">
+
+    <h2>{{ title }}</h2>
+
+    <form [formGroup]="updateForm">
+
+        <div class="form-field-title">Title:
+            <span *ngIf="getC('title').invalid && getC('title').errors.invalidName" class="form-error-msg">* must start
+                with a-Z or 0-9</span>
+        </div>
+        <input class="form-input" type="name" formControlName="title" />
+
+        <div class="form-field-title">Description:
+            <span *ngIf="getC('description').errors && getC('description').touched" class="form-error-msg">* must start
+                with a-Z or 0-9
+            </span>
+        </div>
+        <input class="form-input" type="name" formControlName="description" />
+
+        <div class="form-field-title">Start Date:
+            <span *ngIf="getC('startDate').errors && getC('startDate').touched" class="form-error-msg">* must be
+                tomorrow
+                or after</span>
+        </div>
+        <input class="form-input" type="date" formControlName="startDate" />
+
+        <div class="form-field-title">End Date:
+            <span *ngIf="getC('endDate').errors && getC('endDate').touched" class="form-error-msg">* must be at start
+                date or after</span>
+        </div>
+        <input class="form-input" type="date" formControlName="endDate" />
+
+        <div class="form-field-title">Category:
+            <span *ngIf="getC('category').errors && getC('category').touched" class="form-error-msg">* required</span>
+        </div>
+        <select class="form-input" formControlName="category">
+            <option [value]="selectedCouponCategory" selected disabled hidden>{{ selectedCoupon.category }}</option>
+            <option *ngFor="let type of categories | keyvalue" [value]="type.key">
+                {{ type.value | titlecase }}
+            </option>
+        </select>
+
+        <div class="form-field-title">Amount:
+            <span *ngIf="getC('amount').errors && getC('amount').touched" class="form-error-msg">* must be >= 1</span>
+        </div>
+        <input class="form-input" type="number" formControlName="amount" />
+
+        <div class="form-field-title">Price:
+            <span *ngIf="getC('price').errors && getC('price').touched" class="form-error-msg">* must be >= 0</span>
+        </div>
+        <input class="form-input" type="number" formControlName="price" />
+
+        <button [disabled]="!updateForm.valid" (click)="update()" class="form-btn">Update</button>
+
+    </form>
+
+</div>
