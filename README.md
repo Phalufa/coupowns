@@ -3,13 +3,14 @@ This project is a full stack web app for managing companies, their coupons, cust
 
 ------------
 
-### Front End tech
+### Front End
 - Angular 9
+- Sass
 - Angular Material - Snackbar
 
 ------------
 
-### Back End tech
+### Back End
 - Spring MVC
 - Hibernate
 - JPA
