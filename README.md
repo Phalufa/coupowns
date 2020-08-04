@@ -14,3 +14,7 @@ This project is a full stack web app for managing companies, their coupons, cust
 - Hibernate
 - JPA
 - MySql
+
+------------
+
+- The images of the coupons are basically placeholders rendering from pravatar.cc
