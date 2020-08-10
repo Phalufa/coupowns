@@ -128,15 +128,11 @@ public class AdminService extends ClientService {
      * @return false if the entity has been deleted successfully, true otherwise
      */
     public boolean deleteCustomer(long id) {
-        if (customerRepo.existsById(id)) {
-            // TODO check if it is necessary to delete the customer's coupons before delete the customer itself
-//            Customer c = getCustomer(id);
-//            c.getCoupons().clear();
-//            customerRepo.save(c);
+        if (customerRepo.existsById(id))
             customerRepo.deleteById(id);
-        } else {
+        else
             throw new EntityNotFoundException();
-        }
+        
         return customerRepo.existsById(id);
     }
 
