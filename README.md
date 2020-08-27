@@ -11,6 +11,6 @@
 - Spring MVC
 - Hibernate
 - JPA
-- MySql
+- MySQL
 ---
 - The images of the coupons are basically placeholders rendering from pravatar.cc
